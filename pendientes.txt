@@ -1,0 +1,26 @@
+CSS - Estilo
+-Loader
+-Menu Desktop 
+-Boton para añadir productos al carrito
+-Pagina carrito vacía
+
+
+
+-JAVASCRIP
+
+1.Menu Hamburguesa= que se aparezca y desaparezca, que lleve a le seccion.
+2.Añadir producto y caracteristicas al carrito.
+3.Sumar cantidad en el logo del carrito en el menu
+4.My Card
+5.selecionar filtro de categorias de productos.
+6.Boton de carrito encendido y apagado.
+
+
+Retos Adicionales:
+
+-Cambiar tema oscuro
+-disminuir cantidad al carrito
+-Sumar cantidad al carrito
+-eliminar productos del carrito
+
+
