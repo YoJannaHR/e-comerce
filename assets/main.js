@@ -72,7 +72,7 @@ for(let i = 0; i < ropa.length; i++){
     contenedor.innerHTML = fragmento
 
 }
-filtrarProductos("sweatshirts")
+filtrarProductos("shirts")
 
 /*!---=============FIN DEL FILTRADO DEL PRODUCTOS=============---*/
 /*!---=============INICIA EVANTO FILTRADO CON CLICK=============---*/

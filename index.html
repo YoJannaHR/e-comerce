@@ -1,71 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arte Store</title>
-<!----- FAVICON ----->
- <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"> 
-<!----- BOXICONS ----->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> 
-<!----- CSS ----->   
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arte Store</title>
+  <!----- FAVICON ----->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <!----- BOXICONS ----->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!----- CSS ----->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-<!----========================= LOADER =======================----->
+  <!----========================= LOADER =======================----->
   <div id="contenedor_carga">
     <div id="carga"></div>
   </div>
-<!----========================= ENCABEZADO =======================----->
-<header class="encabezado">
-  <nav class="navbar contenedor">
-    <a href="#" class="logoNavbar">
-      <img src="/assets/img/logoAcademlo.svg" class="logoNavbar_icons" alt="">
+  <!----========================= ENCABEZADO =======================----->
+  <header class="encabezado">
+    <nav class="navbar contenedor">
+      <a href="#" class="logoNavbar">
+        <img src="./assets/img/logoAcademlo.svg" class="logoNavbar_icons" alt="">
         <title>Academlo Logo</title>
         <g>
           <g>
-            <path d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z"></path> 
-            <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+            <path
+              d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z">
+            </path>
+            <path
+              d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
             </path>
           </g>
         </g>
-      </svg>Store
-    </a>   
+        </svg>Store
+      </a>
 
-  <div class="menu" id="menu">
-    <ul class="listaMenu">
-      <li class="item_menu">
-        <a href="#inicio" class="menu_link menu_link2">Home</a>
-      </li>
-     
-      <li class="item_menu">
-        <a href="#productos" class="menu_link">Products</a>
-      </li>
-   
-    </ul>
+      <div class="menu" id="menu">
+        <ul class="listaMenu">
+          <li class="item_menu">
+            <a href="#inicio" class="menu_link menu_link2">Home</a>
+          </li>
 
-    <div class="icono_cierre" id="icono_cierre">
-      <i class='bx bx-x'></i>
-    </div>
-  </div>
- 
-  <div class="iconos_acciones">
-    <!--=====  button cambio de tema  =====-->
-    <i class='bx bx-moon change-theme' id="cambio_tema"></i>
-     <!--=====  button compra  =====-->
-    <div class="boton_compra" id="boton_compra">
-      <i class='bx bx-shopping-bag'></i>
-      <span id="contador" class="contador"></span>
-    </div>
-      <!--=====  button menu Hamburguesa  =====-->
-    <div class="boton_menuMovil" id="boton_menuMovil">
-      <i class='bx bx-grid-alt'></i>
-    </div>
-  </div>
+          <li class="item_menu">
+            <a href="#productos" class="menu_link">Products</a>
+          </li>
 
-</nav>
-</header>
+        </ul>
+
+        <div class="icono_cierre" id="icono_cierre">
+          <i class='bx bx-x'></i>
+        </div>
+      </div>
+
+      <div class="iconos_acciones">
+        <!--=====  button cambio de tema  =====-->
+        <i class='bx bx-moon change-theme' id="cambio_tema"></i>
+        <!--=====  button compra  =====-->
+        <div class="boton_compra" id="boton_compra">
+          <i class='bx bx-shopping-bag'></i>
+          <span id="contador" class="contador"></span>
+        </div>
+        <!--=====  button menu Hamburguesa  =====-->
+        <div class="boton_menuMovil" id="boton_menuMovil">
+          <i class='bx bx-grid-alt'></i>
+        </div>
+      </div>
+
+    </nav>
+  </header>
 
   <!-----===== CART =====----->
 
@@ -75,162 +80,163 @@
 
   </div>
 
-   <!-----===== MAIN =====----->
-<main class="main">
+  <!-----===== MAIN =====----->
+  <main class="main">
 
 
-<!---===== inicio =====--->
-<section class="inicio" id="inicio">
+    <!---===== inicio =====--->
+    <section class="inicio" id="inicio">
 
-  <div class="contenedor_inicio contenedor grid">
-    <div class="cont_inicio_img">
-      <img src="assets/img/home.png" alt="" class="inicio_img">
-    </div>
+      <div class="contenedor_inicio contenedor grid">
+        <div class="cont_inicio_img">
+          <img src="assets/img/home.png" alt="" class="inicio_img">
+        </div>
 
-    <div class="info_inicio">
-      <h1 class="titulo_inicio">New Sweatshirt <br> COLLECTIONS 2022</h1>
-      <p class="parrafo_inicio">
-        Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern
-        design.
-      </p>
-      <span class="precio_inicio">$14.00</span>
+        <div class="info_inicio">
+          <h1 class="titulo_inicio">New Sweatshirt <br> COLLECTIONS 2022</h1>
+          <p class="parrafo_inicio">
+            Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern
+            design.
+          </p>
+          <span class="precio_inicio">$14.00</span>
 
-      <div class="inicio__botones">
-        <a href="#" class=" boton_gris boton_pequeño">
-          Discover
-        </a>
+          <div class="inicio__botones">
+            <a href="#" class=" boton_gris boton_pequeño">
+              Discover
+            </a>
 
-        <button class="boton boton_inicio">ADD TO CART</button>
+            <button class="boton boton_inicio">ADD TO CART</button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
 
 
 
 
 
-</section>
-<!---=====productos====--->
+    </section>
+    <!---=====productos====--->
 
-<section class="productos">
-  <div class="contenedor_productos contenedor">
-    <ul class="filtros_productos">
-      <li class="item_productos linea_productos" data-filter="all">
-        <h3 class="titulo_productos">
-          Show All
-        </h3>
-        <span class="stock_productos">
-          show all products
-        </span>
-      </li>
+    <section class="productos">
+      <div class="contenedor_productos contenedor">
+        <ul class="filtros_productos">
+          <li class="item_productos linea_productos" data-filter="all">
+            <h3 class="titulo_productos">
+              Show All
+            </h3>
+            <span class="stock_productos">
+              show all products
+            </span>
+          </li>
 
-      <li class="item_productos linea_productos active-product" data-filter=".hoodies">
-        <h3 class="titulo_productos">
-          Hoodies
-        </h3>
-        <span class="stock_productos">
-          3 products
-        </span>
-      </li>
+          <li class="item_productos linea_productos active-product" data-filter=".hoodies">
+            <h3 class="titulo_productos">
+              Hoodies
+            </h3>
+            <span class="stock_productos">
+              3 products
+            </span>
+          </li>
 
-      <li class="item_productos linea_productos" data-filter=".shirts">
-        <h3 class="titulo_productos">
-          Shirts
-        </h3>
-        <span class="stock_productos">
-          4 products
-        </span>
-      </li>
+          <li class="item_productos linea_productos" data-filter=".shirts">
+            <h3 class="titulo_productos">
+              Shirts
+            </h3>
+            <span class="stock_productos">
+              4 products
+            </span>
+          </li>
 
-      <li class="item_productos" data-filter=".sweatshirts">
-        <h3 class="titulo_productos">
-          Sweatshirts
-        </h3>
-        <span class="stock_productos">
-          4 products
-        </span>
-      </li>
-    </ul>
+          <li class="item_productos" data-filter=".sweatshirts">
+            <h3 class="titulo_productos">
+              Sweatshirts
+            </h3>
+            <span class="stock_productos">
+              4 products
+            </span>
+          </li>
+        </ul>
 
-    <div class="contenido_productos grid" id="contenido_productos">
+        <div class="contenido_productos grid" id="contenido_productos">
           <!-- aqui agrego card con el Dom 
          
 
 ------------------------------------------------------->
+        </div>
+      </div>
+
+
+    </section>
+
+
+  </main>
+  <footer class="footer seccionFooter">
+    <div class="contenedor_footer contenedor grid">
+      <div class="footer_contenido">
+        <h3 class="titulo_footer">Our information</h3>
+
+        <ul class="ciudad_footer">
+          <li>Toluca - México</li>
+        </ul>
+      </div>
+      <div class="footer_contenido">
+        <h3 class="titulo_footer">About Us</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Support Center</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Customer Support</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Copy Right</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer_contenido">
+        <h3 class="titulo_footer">Product</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Hoodies</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Shirts</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Sweatshirts</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer_contenido">
+        <h3 class="titulo_footer">Social</h3>
+
+        <ul class="footer__social">
+          <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-facebook'></i>
+          </a>
+
+          <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-twitter'></i>
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-instagram'></i>
+          </a>
+        </ul>
+      </div>
     </div>
-  </div>
 
-
-</section>
-
-
-</main>
-<footer class="footer seccionFooter">
-  <div class="contenedor_footer contenedor grid">
-    <div class="footer_contenido">
-      <h3 class="titulo_footer">Our information</h3>
-
-      <ul class="ciudad_footer">
-        <li>Toluca - México</li>
-      </ul>
-    </div>
-    <div class="footer_contenido">
-      <h3 class="titulo_footer">About Us</h3>
-
-      <ul class="footer__links">
-        <li>
-          <a href="#" class="footer__link">Support Center</a>
-        </li>
-        <li>
-          <a href="#" class="footer__link">Customer Support</a>
-        </li>
-        <li>
-          <a href="#" class="footer__link">About Us</a>
-        </li>
-        <li>
-          <a href="#" class="footer__link">Copy Right</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer_contenido">
-      <h3 class="titulo_footer">Product</h3>
-
-      <ul class="footer__links">
-        <li>
-          <a href="#" class="footer__link">Hoodies</a>
-        </li>
-        <li>
-          <a href="#" class="footer__link">Shirts</a>
-        </li>
-        <li>
-          <a href="#" class="footer__link">Sweatshirts</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer_contenido">
-      <h3 class="titulo_footer">Social</h3>
-
-      <ul class="footer__social">
-        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
-          <i class='bx bxl-facebook'></i>
-        </a>
-
-        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
-          <i class='bx bxl-twitter'></i>
-        </a>
-
-        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
-          <i class='bx bxl-instagram'></i>
-        </a>
-      </ul>
-    </div>
-  </div>
-
-  <span class="footer__copy">&#169; ACADEMLO. All rigths reserved</span>
-</footer>
-    <script src="./assets/main.js"></script>
+    <span class="footer__copy">&#169; ACADEMLO. All rigths reserved</span>
+  </footer>
+  <script src="./assets/main.js"></script>
 </body>
+
 </html>

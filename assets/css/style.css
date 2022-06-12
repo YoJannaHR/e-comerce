@@ -55,8 +55,30 @@ body {
  .logoNavbar_icons {
   width: 48px;
   height: 48px;
-  fill: hsl(354, 78%, 60%);
+  
 }
+
+.logoNavbar{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  color: rgb(38, 38, 38); 
+}
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  visibility: hidden;
+}
+.menu a{
+  color: rgb(38, 38, 38);
+}
+
+
 
 .encabezado {
   width: 100%;
@@ -81,6 +103,7 @@ body {
     height: 3.5rem;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     /* justify-content: space-between;
     align-items: center; */
 
@@ -352,6 +375,8 @@ li {
 }
 
 @media screen and (min-width: 576px) {
+
+ 
   .contenido_productos {
     grid-template-columns: repeat(2, 200px);
     column-gap: 3rem;
@@ -530,6 +555,35 @@ a {
     grid-template-columns: repeat(2, 200px);
     column-gap: 3rem;
   }
+  .menu{
+    
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    text-decoration: none;
+    visibility: visible;
+  }
+  .menu a{
+    color: rgb(38, 38, 38);
+  }
+
+  #icono_cierre{
+    display: none;
+  }
+  .listaMenu{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content:end;
+    gap: 15px;
+  }
+  .bx-grid-alt{
+    display: none;
+  }
+
 
 
 }
