@@ -6,9 +6,29 @@ window.onload = function(){
     contenedor.style.visibility = 'hidden';
     contenedor.style.opacity = '0';
   }
+  
+ /*!---=============VISTA DE CARRITO VACIO=============---*/  
 
 
+  let botonCompra = document.querySelector('#boton_compra')
+  let  cartOverlay = document.querySelector('.carrito_vacio')
+  botonCompra.addEventListener("click", () =>{
+     
+    cartOverlay.classList.add("mostrar")
 
+  })
+
+  let cerrarCarrito = document.querySelector('#cart-close')
+  let  quitarCartOverlay = document.querySelector('.carrito_vacio')
+
+  cerrarCarrito.addEventListener("click", () =>{
+     
+     quitarCartOverlay.classList.replace("mostrar" , "carrito_vacio")
+
+  })
+
+
+/*!---============= FIN VISTA DE CARRITO VACIO=============---*/
   /*!---=============BASE DE DATOS POSTIZA=============---*/
   const ropa = [
     {

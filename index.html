@@ -59,15 +59,16 @@
         <!--=====  button cambio de tema  =====-->
         <i class='bx bx-moon change-theme' id="cambio_tema"></i>
         <!--=====  button compra  =====-->
+     
         <div class="boton_compra" id="boton_compra">
           <i class='bx bx-shopping-bag'></i>
-          <span id="contador" class="contador"></span>
-        </div>
+          <span id="contador" class="contador">0</span>
+      </div>
         <!--=====  button menu Hamburguesa  =====-->
         <div class="boton_menuMovil" id="boton_menuMovil">
           <i class='bx bx-grid-alt'></i>
         </div>
-      </div>
+      
 
     </nav>
   </header>
@@ -75,8 +76,24 @@
   <!-----===== CART =====----->
 
   <div class="cart" id="cart">
-
-
+   <!-- Aqui voy a añadir los productos que se incluyen en el carrioto -->
+<!--    
+      <i class='bx bx-x cart__close' id="cart-close"></i>
+  
+      <h2 class="cart__title-center">My Cart</h2>
+  
+      <div class="cart__container"></div>
+  
+      <div class="cart__prices">
+        <span class="cart__prices-item"><span id="items-count"></span> items</span>
+        <span class="cart__prices-total" id="cart-total"></span>
+      </div>
+  
+      <div class="cart__checkout">
+        <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i> Checkout</button>
+      </div>
+   -->
+    
 
   </div>
 
@@ -159,18 +176,13 @@
         </ul>
 
         <div class="contenido_productos grid" id="contenido_productos">
-          <!-- aqui agrego card con el Dom 
-         
 
-------------------------------------------------------->
         </div>
       </div>
-
-
     </section>
+ </main>
 
-
-  </main>
+   <!---=====Footer====--->  
   <footer class="footer seccionFooter">
     <div class="contenedor_footer contenedor grid">
       <div class="footer_contenido">
@@ -236,6 +248,31 @@
 
     <span class="footer__copy">&#169; ACADEMLO. All rigths reserved</span>
   </footer>
+    <!---=====shopping-cart -overlay====--->
+
+    <div class="carrito_vacio">
+     <div class="selected-products-list">
+          
+      <i class='bx bx-x bx-md cart__close' id="cart-close"></i>
+
+      <div class="empty-state">
+         <img src="./assets/img/empty-cart2.png" alt="">
+      </div>
+
+      <h5>
+
+            Aun no has agregado ningun producto al carrito
+      </h5>
+
+     </div>
+
+
+    </div>
+
+
+
+
+
   <script src="./assets/main.js"></script>
 </body>
 
