@@ -10,14 +10,12 @@ window.onload = function(){
  /*!---=============VISTA DE CARRITO VACIO=============---*/  
 
 
-  let botonCompra = document.querySelector('#boton_compra')
+  let botonCompra = document.getElementById('boton_compra')
   let  cartOverlay = document.querySelector('.carrito_vacio')
   botonCompra.addEventListener("click", () =>{
      
-    cartOverlay.classList.add("mostrar")
-
+    cartOverlay.classList.toggle("mostrar")
   })
-
   let cerrarCarrito = document.querySelector('#cart-close')
   let  quitarCartOverlay = document.querySelector('.carrito_vacio')
 
@@ -56,15 +54,6 @@ window.onload = function(){
         category: "shirts" 
     }
   ]
-/*
-let productos = document.querySelector('contenido_productos')
-
-let fragmento = new DocumentFragment
-
-for(let i = 0; i < ropa.length; i++){
- 
- let div = document.("article")
-  div.classList.add("article")*/
 
   /*!---=============INICIO DEL FILTRADO DEL PRODUCTOS=============---*/
 
