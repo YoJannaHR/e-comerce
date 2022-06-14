@@ -118,41 +118,10 @@ for(let i = 0; i < ropa.length; i++){
 
   
   let btnShowAll = document.querySelector(".show-all")
-  btnShowAll.addEventListener("click", () =>
-{
-  let contenedor1 = document.querySelector(".contenido_productos")
-  let fragmento = new DocumentFragment
+  btnShowAll.addEventListener("click", () =>{
+    return filtrado("category")
+  })
 
-  for(let i = 0; i < ropa.length; i++) {
-
-    let article = document.createElement("article")
-    article.classList.add("card_productos%")//el div padre
-
-    let div = document.createElement("div")
-    div.classList.add("productos_imagenes")
-    let img = document.createElement("img")
-    img.src = ropa[i].imgUrl//terminan el div al que meto la imagen
-
-    let div2 = document.createElement("div2")
-    div2.classList.add("products__data")
-    
-    let h2 = document.createElement("h2")
-    h2.textContent = ropa[i].Precio
-    
-    let h3 = document.createElement("h3")
-    p.textContent = ropa[i].nombre
-    
-    article.appendChild(div)
-    div.appendChild(img)
-    article.appendChild(div2)
-    div2.appendChild(h2)
-    div2.appendChild(h3)
-    
-    fragmento.appendChild( article )
-}
-
-console.log(contenedor1.appendChild( fragmento ))
-})
   let btnHoodies = document.querySelector(".hoodies")
   btnHoodies.addEventListener("click", () =>
 {
@@ -177,8 +146,25 @@ return filtrado("sweatshirts")
     let contenedor = document.querySelector(".contenido_productos")
     let fragmento = ""
 
-    //let btnHoodies = document.querySelector(".hoodies")
-   // btnHoodies.addEventListener("click", () => 
+    /*if(btnShowAll == true){
+      for(let i = 0; i < ropa.length; i++){
+      `<article class="card_productos hoddies">
+      <div class="productos_imagenes">
+        <img src=${producto.imgUrl} alt="">
+      </div>
+      <div class="products__data">
+         <h2 class="products__price">${producto.Precio}<span class="products__quantity">| Stock:${producto.stock}</span></h2>
+         
+         <h3 class="producs__name">${producto.nombre}</h3>
+         <button class="boton products__button"></button>
+      </div>
+    </article>
+      `
+      }
+    }else{*/
+
+
+  
 
     let resultadoProductos = ropa.filter( (ropa) => ropa.category === tipo )
     
@@ -198,7 +184,8 @@ return filtrado("sweatshirts")
         `
     })
     contenedor.innerHTML = fragmento
-}
+  }
+//}
 
 
 /*!---=============FIN DEL FILTRADO DEL PRODUCTOS=============---*/
