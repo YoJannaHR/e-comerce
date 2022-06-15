@@ -86,13 +86,8 @@ return filtrado("sweatshirts")
 
 
   let filtrado = function filtrarProductos( tipo ){
-
-
     let contenedor = document.querySelector(".contenido_productos")
     let fragmento = ""
-    let cart =[]
-
-
     let resultadoProductos = ropa.filter( (ropa) => ropa.category === tipo )
     
     resultadoProductos.forEach( (producto) => {
@@ -130,33 +125,37 @@ return filtrado("sweatshirts")
         })
      })
 
-  }
-
+    } 
+  
+  let cart = []
   function agregarProducto( producto ){
 
     let resultadoFind = cart.find( item => item.id === producto.id )
-    resultadoFind = "actualizacion"
+    // resultadoFind = "actualizacion"
 
-    if( resultadoFind ){
-        let stock = cart[resultadoFind.index].stock
-        let quantitySelected = cart[resultadoFind.index].stokcSelected //cantidad de productos seleccionados
+    // if( resultadoFind ){
+    //     let cuantity = cart[resultadoFind.index].stock
+    //     let quantitySelected = cart[resultadoFind.index].stokcSelected //cantidad de productos seleccionados
 
-        if( stock > quantitySelected ){
-            cart[resultadoFind.index].quantitySelected += 1
-        }else{
-            alert( "No tenemos suficiente inventario" )
-        }
+        if( resultadoFind){
+            cart[resultadoFind.index].stokcSelected += 1
+        // }
+        // else{
+        //     alert( "No tenemos suficiente inventario" )
+        // }
 
     }else{
-        producto.quantitySelected = 1
+        producto.stokcSelected = 1
         producto.index = cart.length
 
 
         cart.push(producto)
+
+
     }
 
-    console.log(cart)
-    mostrarProductosCart()
+     console.log(cart)
+    // mostrarProductosCart()
 }
 
 
