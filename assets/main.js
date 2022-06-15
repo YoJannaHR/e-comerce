@@ -1,11 +1,11 @@
 'use strict'
 
-window.onload = function(){
-    var contenedor = document.getElementById('contenedor_carga');
+// window.onload = function(){
+//     var contenedor = document.getElementById('contenedor_carga');
   
-    contenedor.style.visibility = 'hidden';
-    contenedor.style.opacity = '0';
-  }
+//     contenedor.style.visibility = 'hidden';
+//     contenedor.style.opacity = '0';
+//   }
   
  /*!---=============VISTA DE CARRITO VACIO=============---*/  
 
@@ -35,24 +35,24 @@ window.onload = function(){
   const ropa = [
     {
         id: 0,
-        imgUrl: "https://i.postimg.cc/jjK4gVDY/featured3.png",
         nombre: "sweatshirt",
+        imgUrl: "https://i.postimg.cc/jjK4gVDY/featured3.png",
         Precio: 11,
         stock:49,
         category:"sweatshirts"
     },
     {
         id: 1,
-        imgUrl: "https://i.postimg.cc/wTCVNRHv/featured1.png",
         nombre: "hoodie",
+        imgUrl: "https://i.postimg.cc/wTCVNRHv/featured1.png",
         Precio: 14,
         stock:2,
-        category:"hoodies"
+        
     },
     {
         id: 2,
-        imgUrl: "https://i.postimg.cc/sg5J4fDJ/featured2.png",
         nombre: "shirt",
+        imgUrl: "https://i.postimg.cc/sg5J4fDJ/featured2.png",
         Precio: 12,
         stock: 12,
         category: "shirts" 
@@ -145,6 +145,7 @@ return filtrado("sweatshirts")
 
     let contenedor = document.querySelector(".contenido_productos")
     let fragmento = ""
+    let cart =[]
 
     /*if(btnShowAll == true){
       for(let i = 0; i < ropa.length; i++){
@@ -178,16 +179,40 @@ return filtrado("sweatshirts")
            <h2 class="products__price">${producto.Precio}<span class="products__quantity">| Stock:${producto.stock}</span></h2>
            
            <h3 class="producs__name">${producto.nombre}</h3>
-           <button class="boton products__button"></button>
+           <button data_id="${producto.id}" class="boton products__button"></button>
         </div>
       </article>
         `
     })
     contenedor.innerHTML = fragmento
+
+    let productsButton = document.querySelectorAll(".products__button")
+
+    productsButton.forEach((button) => {
+        
+       button.addEventListener("click", () =>{
+         const id = parseInt(button.getAttribute("data_id"))
+         const product = ropa.find(item => item.id  == id)
+        
+         cart.push(product)
+
+         console.log(cart) 
+        })
+         
+
+    })
   }
-//}
+  
 
 
 /*!---=============FIN DEL FILTRADO DEL PRODUCTOS=============---*/
 /*!---=============INICIA EVANTO FILTRADO CON CLICK=============---*/
 /* 1- empezamos desde el li con clase = item_productos linea_productos*/
+
+
+
+/*!---=============SUBIR PRODUCTOS AL CARRITO=============---*/
+
+
+
+/*!---=============FIN SUBIR PRODUCTOS AL CARRITO=============---*/
