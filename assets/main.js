@@ -7,6 +7,8 @@
 //     contenedor.style.opacity = '0';
 //   }
   
+
+let contenedor = document.querySelector(".contenido_productos")
  /*!---=============VISTA DE CARRITO VACIO=============---*/  
 
 
@@ -65,7 +67,7 @@
 
   let btnShowAll = document.querySelector(".show-all")
   btnShowAll.addEventListener("click", () =>{
-    return filtrado("category")
+    return filtrado2()
   })
 
   let btnHoodies = document.querySelector(".hoodies")
@@ -84,9 +86,36 @@ btnSweatshirts.addEventListener("click", () =>
 return filtrado("sweatshirts")
 })
 
+//-------======================inicio de funcion par visualizar todos los productos ===================------------//
+
+
+let filtrado2 = function mostrarProductos() {
+  let fragmentHTML = ""
+
+  ropa.forEach( (producto) =>{
+      fragmentHTML +=
+      ` <article class="card_productos hoddies">
+      <div class="productos_imagenes">
+        <img src=${producto.imgUrl} alt="">
+      </div>
+      <div class="products__data">
+         <h2 class="products__price">${producto.Precio}<span class="products__quantity">| Stock:${producto.stock}</span></h2>
+         
+         <h3 class="producs__name">${producto.nombre}</h3>
+         <button data_id="${producto.id}" class="boton products__button"></button>
+      </div>
+    </article>
+      `
+  })
+
+  contenedor.innerHTML = fragmentHTML 
+
+}
+//-----------========== fin de la funcion para visualizar todos los productos ============--------*/
+
 
   let filtrado = function filtrarProductos( tipo ){
-    let contenedor = document.querySelector(".contenido_productos")
+    
     let fragmento = ""
     let resultadoProductos = ropa.filter( (ropa) => ropa.category === tipo )
     
