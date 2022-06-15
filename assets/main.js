@@ -62,9 +62,15 @@ let contenedor = document.querySelector(".contenido_productos")
     }
   ]
 
+    /*!---=============Variables Busquedas elementos =============---*/
+  
+  let cartContainer = document.querySelector(".cart-list")
+  let cart = []
+    /*!---============= Fin Variables Busquedas elementos=============---*/
 
   /*!---=============INICIO DEL FILTRADO DEL PRODUCTOS=============---*/
 
+  
   let btnShowAll = document.querySelector(".show-all")
   btnShowAll.addEventListener("click", () =>{
     return filtrado2()
@@ -90,7 +96,8 @@ return filtrado("sweatshirts")
 
 
 let filtrado2 = function mostrarProductos() {
-  let fragmentHTML = ""
+let fragmentHTML = ""
+  
 
   ropa.forEach( (producto) =>{
       fragmentHTML +=
@@ -109,6 +116,23 @@ let filtrado2 = function mostrarProductos() {
   })
 
   contenedor.innerHTML = fragmentHTML 
+
+ 
+let productsButton = document.querySelectorAll(".products__button")
+
+    productsButton.forEach((button) => {
+        
+       button.addEventListener("click", () =>{
+         const id = parseInt(button.getAttribute("data_id"))
+                 
+         const product = ropa.find(item => item.id  === id) //find() devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.
+           
+
+         agregarProducto( product )
+                  
+        })
+     })
+
 
 }
 //-----------========== fin de la funcion para visualizar todos los productos ============--------*/
@@ -138,43 +162,51 @@ let filtrado2 = function mostrarProductos() {
 
     contenedor.innerHTML = fragmento
 
-  
+  }
 /*!---=============FIN DEL FILTRADO DEL PRODUCTOS=============---*/  
 
-    let productsButton = document.querySelectorAll(".products__button")
+/*!---=============SELECIONAR PRODUCTOS CARRITO =============---*/  
+// let cart = []
+// let productsButton = document.querySelectorAll(".products__button")
 
-    productsButton.forEach((button) => {
+//     productsButton.forEach((button) => {
         
-       button.addEventListener("click", () =>{
-         const id = parseInt(button.getAttribute("data_id"))
+//        button.addEventListener("click", () =>{
+//          const id = parseInt(button.getAttribute("data_id"))
                  
-         const product = ropa.find(item => item.id  === id) //find() devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.
+//          const product = ropa.find(item => item.id  === id) //find() devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.
+           
+//            cart.push(product)
+//             console.log((cart))
 
-         agregarProducto(product)
-        })
-     })
+//         //  agregarProducto(product)
+//         })
+//      })
 
-    } 
+    // } 
   
-  let cart = []
+
+
+
   function agregarProducto( producto ){
 
     let resultadoFind = cart.find( item => item.id === producto.id )
-    // resultadoFind = "actualizacion"
+//     // resultadoFind = "actualizacion"
 
-    // if( resultadoFind ){
-    //     let cuantity = cart[resultadoFind.index].stock
-    //     let quantitySelected = cart[resultadoFind.index].stokcSelected //cantidad de productos seleccionados
+    if( resultadoFind ){
+        let stock = cart[resultadoFind.index].stock
+        let quantitySelected = cart[resultadoFind.index].quantitySelected
+    cart[resultadoFind.index].quantitySelected//cantidad de productos seleccionados
 
-        if( resultadoFind){
-            cart[resultadoFind.index].stokcSelected += 1
-        // }
-        // else{
-        //     alert( "No tenemos suficiente inventario" )
-        // }
+        if( stock > quantitySelected){
+            cart[resultadoFind.index].quantitySelected += 1
+        }
+        else{
+           alert( "No tenemos suficiente inventario" )
+        }
 
     }else{
-        producto.stokcSelected = 1
+        producto.quantitySelected = 1
         producto.index = cart.length
 
 
@@ -183,40 +215,40 @@ let filtrado2 = function mostrarProductos() {
 
     }
 
-     console.log(cart)
-    // mostrarProductosCart()
-}
+    //  console.log(cart)
+    mostrarProductosCart()
+ }
 
 
 function mostrarProductosCart(){
 
     let fragmentoHTML = ``
-    let suma = 0
-    let cantidadTotal = 0
+    // let suma = 0
+    // let cantidadTotal = 0
 
     cart.forEach( item =>{
         fragmentoHTML += `
         <div class="cart-item">
-            <img src=${item.image} alt="">
-            <p>${item.name}</p>
+            <img src=${item.imgUrl} alt="">
+            <p>${item.nombre}</p>
             <small>Cantidad: ${item.quantitySelected}</small>
         </div>
-        `
+       `
 
-        let totalProducto = item.quantitySelected * item.price 
-        suma += totalProducto
+        // let totalProducto = item.quantitySelected * item.price 
+        // suma += totalProducto
 
-        cantidadTotal += item.quantitySelected
+        // cantidadTotal += item.quantitySelected
     })
 
-    fragmentoHTML += `
-    <div class="cart-price">
-        <p>Productos seleccionados:${ cantidadTotal }</p>
-        <p>$${ suma }</p>
-    </div>
-    `
+    // fragmentoHTML += `
+    // <div class="cart-price">
+    //     <p>Productos seleccionados:${ cantidadTotal }</p>
+    //     <p>$${ suma }</p>
+    // </div>
+    // `
     cartContainer.innerHTML = fragmentoHTML
-    cartCount.textContent = cantidadTotal
+    // cartCount.textContent = cantidadTotal
 }
 
 

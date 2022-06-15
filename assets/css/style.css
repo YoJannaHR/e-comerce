@@ -207,6 +207,15 @@ button {
   outline: none;
 }
 
+.cart-item img{
+  width: 100px;
+  height: 150px;
+  object-fit: contain;
+
+
+
+}
+
 
 @media screen and (min-width: 767px) {
 
