@@ -16,10 +16,9 @@
 
 <body>
   <!----========================= LOADER =======================----->
- <!--<div id="contenedor_carga">
+  <div id="contenedor_carga">
     <div id="carga"></div>
   </div>
--->  
   <!----========================= ENCABEZADO =======================----->
   <header class="encabezado">
     <nav class="navbar contenedor">
@@ -60,16 +59,16 @@
         <!--=====  button cambio de tema  =====-->
         <i class='bx bx-moon change-theme' id="cambio_tema"></i>
         <!--=====  button compra  =====-->
-     
+
         <div class="boton_compra" id="boton_compra">
           <i class='bx bx-shopping-bag'></i>
           <span id="contador" class="contador">0</span>
-      </div>
+        </div>
         <!--=====  button menu Hamburguesa  =====-->
         <div class="boton_menuMovil" id="boton_menuMovil">
           <i class='bx bx-grid-alt'></i>
         </div>
-      
+
 
     </nav>
   </header>
@@ -77,8 +76,8 @@
   <!-----===== CART =====----->
 
   <div class="cart" id="cart">
-   <!-- Aqui voy a añadir los productos que se incluyen en el carrioto -->
-<!--    
+    <!-- Aqui voy a añadir los productos que se incluyen en el carrioto -->
+    <!--    
       <i class='bx bx-x cart__close' id="cart-close"></i>
   
       <h2 class="cart__title-center">My Cart</h2>
@@ -94,7 +93,7 @@
         <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i> Checkout</button>
       </div>
    -->
-    
+
 
   </div>
 
@@ -134,7 +133,7 @@
       <div class="contenedor_productos contenedor">
         <ul class="filtros_productos">
           <li class="item_productos linea_productos" data-filter="all">
-            <h3 class="titulo_productos">
+            <h3 class="titulo_productos show-all">
               Show All
             </h3>
             <span class="stock_productos">
@@ -143,7 +142,7 @@
           </li>
 
           <li class="item_productos linea_productos active-product" data-filter=".hoodies">
-            <h3 class="titulo_productos">
+            <h3 class="titulo_productos hoodies">
               Hoodies
             </h3>
             <span class="stock_productos">
@@ -152,7 +151,7 @@
           </li>
 
           <li class="item_productos linea_productos" data-filter=".shirts">
-            <h3 class="titulo_productos">
+            <h3 class="titulo_productos shirts">
               Shirts
             </h3>
             <span class="stock_productos">
@@ -161,7 +160,7 @@
           </li>
 
           <li class="item_productos" data-filter=".sweatshirts">
-            <h3 class="titulo_productos">
+            <h3 class="titulo_productos sweatshirts">
               Sweatshirts
             </h3>
             <span class="stock_productos">
@@ -175,9 +174,9 @@
         </div>
       </div>
     </section>
- </main>
+  </main>
 
-   <!---=====Footer====--->  
+  <!---=====Footer====--->
   <footer class="footer seccionFooter">
     <div class="contenedor_footer contenedor grid">
       <div class="footer_contenido">
@@ -243,16 +242,17 @@
 
     <span class="footer__copy">&#169; ACADEMLO. All rigths reserved</span>
   </footer>
-    <!---=====shopping-cart -overlay====--->
+  <!---=====shopping-cart -overlay====--->
 
-    <div class="carrito_vacio">
-     <div class="selected-products-list">
-          
+  <div class="carrito_vacio">
+    <div class="selected-products-list">
+
       <i class='bx bx-x bx-md cart__close' id="cart-close"></i>
 
       <div class="empty-state">
-         <img src="./assets/img/empty-cart2.png" alt="">
+        <img src="./assets/img/empty-cart2.png" alt="">
       </div>
+
       <div class="cart_precios">
         <span class="cart__prices-item"><span id="items-count"></span> items</span>
         <span class="cart__prices-total" id="cart-total">$0.00</span>
@@ -262,7 +262,13 @@
         <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i> Checkout</button>
       </div>
        </div>
+
     </div>
+  
+ 
+
+
+  </div>
 
   <script src="./assets/main.js"></script>
 </body>

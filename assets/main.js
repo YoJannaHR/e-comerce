@@ -10,12 +10,14 @@ window.onload = function(){
  /*!---=============VISTA DE CARRITO VACIO=============---*/  
 
 
-  let botonCompra = document.getElementById('boton_compra')
+  let botonCompra = document.querySelector('#boton_compra')
   let  cartOverlay = document.querySelector('.carrito_vacio')
   botonCompra.addEventListener("click", () =>{
      
-    cartOverlay.classList.toggle("mostrar")
+    cartOverlay.classList.add("mostrar")
+
   })
+
   let cerrarCarrito = document.querySelector('#cart-close')
   let  quitarCartOverlay = document.querySelector('.carrito_vacio')
 
@@ -27,6 +29,8 @@ window.onload = function(){
 
 
 /*!---============= FIN VISTA DE CARRITO VACIO=============---*/
+
+
   /*!---=============BASE DE DATOS POSTIZA=============---*/
   const ropa = [
     {
@@ -54,12 +58,113 @@ window.onload = function(){
         category: "shirts" 
     }
   ]
+/*
+let productos = document.querySelector('contenido_productos')
+
+let fragmento = new DocumentFragment
+
+for(let i = 0; i < ropa.length; i++){
+ 
+ let div = document.("article")
+  div.classList.add("article")*/
+/*=======================INICIO DEL FILTRADO DE PRODUCTOS POR CATEGORIAS=====--*/
+
+
+
+/*
+<ul class="filtros_productos">
+<li class="item_productos linea_productos" data-filter="all">
+  <h3 class="titulo_productos">
+    Show All
+  </h3>
+  <span class="stock_productos">
+    show all products
+  </span>
+</li>
+
+<li class="item_productos linea_productos active-product" data-filter=".hoodies">
+  <h3 class="titulo_productos">
+    Hoodies
+  </h3>
+  <span class="stock_productos">
+    3 products
+  </span>
+</li>
+
+<li class="item_productos linea_productos" data-filter=".shirts">
+  <h3 class="titulo_productos">
+    Shirts
+  </h3>
+  <span class="stock_productos">
+    4 products
+  </span>
+</li>
+
+<li class="item_productos" data-filter=".sweatshirts">
+  <h3 class="titulo_productos">
+    Sweatshirts
+  </h3>
+  <span class="stock_productos">
+    4 products
+  </span>
+</li>
+</ul>*/
+
+
+
+
 
   /*!---=============INICIO DEL FILTRADO DEL PRODUCTOS=============---*/
 
-  function filtrarProductos( tipo ){
+  
+  let btnShowAll = document.querySelector(".show-all")
+  btnShowAll.addEventListener("click", () =>{
+    return filtrado("category")
+  })
+
+  let btnHoodies = document.querySelector(".hoodies")
+  btnHoodies.addEventListener("click", () =>
+{
+  return filtrado("hoodies")
+})
+let btnShirts = document.querySelector(".shirts")
+btnShirts.addEventListener("click", () =>
+{
+return filtrado("shirts")
+})
+let btnSweatshirts = document.querySelector(".sweatshirts")
+btnSweatshirts.addEventListener("click", () =>
+{
+return filtrado("sweatshirts")
+})
+
+
+
+  let filtrado = function filtrarProductos( tipo ){
+
+
     let contenedor = document.querySelector(".contenido_productos")
     let fragmento = ""
+
+    /*if(btnShowAll == true){
+      for(let i = 0; i < ropa.length; i++){
+      `<article class="card_productos hoddies">
+      <div class="productos_imagenes">
+        <img src=${producto.imgUrl} alt="">
+      </div>
+      <div class="products__data">
+         <h2 class="products__price">${producto.Precio}<span class="products__quantity">| Stock:${producto.stock}</span></h2>
+         
+         <h3 class="producs__name">${producto.nombre}</h3>
+         <button class="boton products__button"></button>
+      </div>
+    </article>
+      `
+      }
+    }else{*/
+
+
+  
 
     let resultadoProductos = ropa.filter( (ropa) => ropa.category === tipo )
     
@@ -79,9 +184,9 @@ window.onload = function(){
         `
     })
     contenedor.innerHTML = fragmento
+  }
+//}
 
-}
-filtrarProductos("shirts")
 
 /*!---=============FIN DEL FILTRADO DEL PRODUCTOS=============---*/
 /*!---=============INICIA EVANTO FILTRADO CON CLICK=============---*/
