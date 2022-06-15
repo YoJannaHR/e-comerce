@@ -47,6 +47,7 @@
         imgUrl: "https://i.postimg.cc/wTCVNRHv/featured1.png",
         Precio: 14,
         stock:2,
+        category: "hoodies" 
         
     },
     {
@@ -58,65 +59,10 @@
         category: "shirts" 
     }
   ]
-/*
-let productos = document.querySelector('contenido_productos')
-
-let fragmento = new DocumentFragment
-
-for(let i = 0; i < ropa.length; i++){
- 
- let div = document.("article")
-  div.classList.add("article")*/
-/*=======================INICIO DEL FILTRADO DE PRODUCTOS POR CATEGORIAS=====--*/
-
-
-
-/*
-<ul class="filtros_productos">
-<li class="item_productos linea_productos" data-filter="all">
-  <h3 class="titulo_productos">
-    Show All
-  </h3>
-  <span class="stock_productos">
-    show all products
-  </span>
-</li>
-
-<li class="item_productos linea_productos active-product" data-filter=".hoodies">
-  <h3 class="titulo_productos">
-    Hoodies
-  </h3>
-  <span class="stock_productos">
-    3 products
-  </span>
-</li>
-
-<li class="item_productos linea_productos" data-filter=".shirts">
-  <h3 class="titulo_productos">
-    Shirts
-  </h3>
-  <span class="stock_productos">
-    4 products
-  </span>
-</li>
-
-<li class="item_productos" data-filter=".sweatshirts">
-  <h3 class="titulo_productos">
-    Sweatshirts
-  </h3>
-  <span class="stock_productos">
-    4 products
-  </span>
-</li>
-</ul>*/
-
-
-
 
 
   /*!---=============INICIO DEL FILTRADO DEL PRODUCTOS=============---*/
 
-  
   let btnShowAll = document.querySelector(".show-all")
   btnShowAll.addEventListener("click", () =>{
     return filtrado("category")
@@ -139,7 +85,6 @@ return filtrado("sweatshirts")
 })
 
 
-
   let filtrado = function filtrarProductos( tipo ){
 
 
@@ -147,25 +92,6 @@ return filtrado("sweatshirts")
     let fragmento = ""
     let cart =[]
 
-    /*if(btnShowAll == true){
-      for(let i = 0; i < ropa.length; i++){
-      `<article class="card_productos hoddies">
-      <div class="productos_imagenes">
-        <img src=${producto.imgUrl} alt="">
-      </div>
-      <div class="products__data">
-         <h2 class="products__price">${producto.Precio}<span class="products__quantity">| Stock:${producto.stock}</span></h2>
-         
-         <h3 class="producs__name">${producto.nombre}</h3>
-         <button class="boton products__button"></button>
-      </div>
-    </article>
-      `
-      }
-    }else{*/
-
-
-  
 
     let resultadoProductos = ropa.filter( (ropa) => ropa.category === tipo )
     
@@ -184,7 +110,12 @@ return filtrado("sweatshirts")
       </article>
         `
     })
+
+
     contenedor.innerHTML = fragmento
+
+  
+/*!---=============FIN DEL FILTRADO DEL PRODUCTOS=============---*/  
 
     let productsButton = document.querySelectorAll(".products__button")
 
@@ -192,27 +123,72 @@ return filtrado("sweatshirts")
         
        button.addEventListener("click", () =>{
          const id = parseInt(button.getAttribute("data_id"))
-         const product = ropa.find(item => item.id  == id)
-        
-         cart.push(product)
+                 
+         const product = ropa.find(item => item.id  === id) //find() devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.
 
-         console.log(cart) 
+         agregarProducto(product)
         })
-         
+     })
 
-    })
   }
-  
+
+  function agregarProducto( producto ){
+
+    let resultadoFind = cart.find( item => item.id === producto.id )
+    resultadoFind = "actualizacion"
+
+    if( resultadoFind ){
+        let stock = cart[resultadoFind.index].stock
+        let quantitySelected = cart[resultadoFind.index].stokcSelected //cantidad de productos seleccionados
+
+        if( stock > quantitySelected ){
+            cart[resultadoFind.index].quantitySelected += 1
+        }else{
+            alert( "No tenemos suficiente inventario" )
+        }
+
+    }else{
+        producto.quantitySelected = 1
+        producto.index = cart.length
 
 
-/*!---=============FIN DEL FILTRADO DEL PRODUCTOS=============---*/
-/*!---=============INICIA EVANTO FILTRADO CON CLICK=============---*/
-/* 1- empezamos desde el li con clase = item_productos linea_productos*/
+        cart.push(producto)
+    }
+
+    console.log(cart)
+    mostrarProductosCart()
+}
 
 
+function mostrarProductosCart(){
 
-/*!---=============SUBIR PRODUCTOS AL CARRITO=============---*/
+    let fragmentoHTML = ``
+    let suma = 0
+    let cantidadTotal = 0
+
+    cart.forEach( item =>{
+        fragmentoHTML += `
+        <div class="cart-item">
+            <img src=${item.image} alt="">
+            <p>${item.name}</p>
+            <small>Cantidad: ${item.quantitySelected}</small>
+        </div>
+        `
+
+        let totalProducto = item.quantitySelected * item.price 
+        suma += totalProducto
+
+        cantidadTotal += item.quantitySelected
+    })
+
+    fragmentoHTML += `
+    <div class="cart-price">
+        <p>Productos seleccionados:${ cantidadTotal }</p>
+        <p>$${ suma }</p>
+    </div>
+    `
+    cartContainer.innerHTML = fragmentoHTML
+    cartCount.textContent = cantidadTotal
+}
 
 
-
-/*!---=============FIN SUBIR PRODUCTOS AL CARRITO=============---*/
