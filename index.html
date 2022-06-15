@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,6 @@
   <!----- CSS ----->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
   <!----========================= LOADER =======================----->
   <!-- <div id="contenedor_carga">
@@ -37,29 +35,23 @@
         </g>
         </svg>Store
       </a>
-
       <div class="menu" id="menu">
         <ul class="listaMenu">
           <li class="item_menu">
             <a href="#inicio" class="menu_link menu_link2">Home</a>
           </li>
-
           <li class="item_menu">
             <a href="#productos" class="menu_link">Products</a>
           </li>
-
         </ul>
-
         <div class="icono_cierre" id="icono_cierre">
           <i class='bx bx-x'></i>
         </div>
       </div>
-
       <div class="iconos_acciones">
         <!--=====  button cambio de tema  =====-->
         <i class='bx bx-moon change-theme' id="cambio_tema"></i>
         <!--=====  button compra  =====-->
-
         <div class="boton_compra" id="boton_compra">
           <i class='bx bx-shopping-bag'></i>
           <span id="contador" class="contador">0</span>
@@ -68,47 +60,46 @@
         <div class="boton_menuMovil" id="boton_menuMovil">
           <i class='bx bx-grid-alt'></i>
         </div>
-
-
     </nav>
   </header>
-
   <!-----===== CART =====----->
-
   <div class="cart" id="cart">
     <!-- Aqui voy a añadir los productos que se incluyen en el carrioto -->
-    <!--    
+    <!--   
       <i class='bx bx-x cart__close' id="cart-close"></i>
-  
+ 
       <h2 class="cart__title-center">My Cart</h2>
-  
+ 
       <div class="cart__container"></div>
-  
+ 
       <div class="cart__prices">
         <span class="cart__prices-item"><span id="items-count"></span> items</span>
         <span class="cart__prices-total" id="cart-total"></span>
       </div>
-  
+ 
       <div class="cart__checkout">
         <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i> Checkout</button>
       </div>
    -->
-
-
   </div>
-
+   <!--=========== MENU MOBIL =============-->
+ <!-- <div class="menu-mobile">
+  <div class="menu-close">
+  <i class='bx bx-x bx-md cart__close' id="menu-close"></i>
+</div>
+  <ul class="nav-mobile">
+    <li class="link1"><a href="">Home</a></li>
+    <li class="link1"><a href="">Products</a></li>
+  </ul>
+ </div> -->
   <!-----===== MAIN =====----->
   <main class="main">
-
-
     <!---===== inicio =====--->
     <section class="inicio" id="inicio">
-
       <div class="contenedor_inicio contenedor grid">
         <div class="cont_inicio_img">
           <img src="assets/img/home.png" alt="" class="inicio_img">
         </div>
-
         <div class="info_inicio">
           <h1 class="titulo_inicio">New Sweatshirt <br> COLLECTIONS 2022</h1>
           <p class="parrafo_inicio">
@@ -116,20 +107,16 @@
             design.
           </p>
           <span class="precio_inicio">$14.00</span>
-
           <div class="inicio__botones">
             <a href="#" class=" boton_gris boton_pequeño">
               Discover
             </a>
-
             <button class="boton boton_inicio">ADD TO CART</button>
           </div>
         </div>
       </div>
-
     </section>
     <!---=====productos====--->
-
     <section class="productos">
       <div class="contenedor_productos contenedor">
         <ul class="filtros_productos">
@@ -141,7 +128,6 @@
               show all products
             </span>
           </li>
-
           <li class="item_productos linea_productos active-product" data-filter=".hoodies">
             <h3 class="titulo_productos hoodies">
               Hoodies
@@ -150,7 +136,6 @@
               3 products
             </span>
           </li>
-
           <li class="item_productos linea_productos" data-filter=".shirts">
             <h3 class="titulo_productos shirts">
               Shirts
@@ -159,7 +144,6 @@
               4 products
             </span>
           </li>
-
           <li class="item_productos linea_productos" data-filter=".sweatshirts">
             <h3 class="titulo_productos sweatshirts">
               Sweatshirts
@@ -169,27 +153,23 @@
             </span>
           </li>
         </ul>
-
         <div class="contenido_productos grid" id="contenido_productos">
           <!-------------------------AQUI se agraga con el dom----------------------->
         </div>
       </div>
     </section>
   </main>
-
   <!---=====Footer====--->
   <footer class="footer seccionFooter">
     <div class="contenedor_footer contenedor grid">
       <div class="footer_contenido">
         <h3 class="titulo_footer">Our information</h3>
-
         <ul class="ciudad_footer">
           <li>Toluca - México</li>
         </ul>
       </div>
       <div class="footer_contenido">
         <h3 class="titulo_footer">About Us</h3>
-
         <ul class="footer__links">
           <li>
             <a href="#" class="footer__link">Support Center</a>
@@ -205,10 +185,8 @@
           </li>
         </ul>
       </div>
-
       <div class="footer_contenido">
         <h3 class="titulo_footer">Product</h3>
-
         <ul class="footer__links">
           <li>
             <a href="#" class="footer__link">Hoodies</a>
@@ -221,85 +199,55 @@
           </li>
         </ul>
       </div>
-
       <div class="footer_contenido">
         <h3 class="titulo_footer">Social</h3>
-
         <ul class="footer__social">
           <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
             <i class='bx bxl-facebook'></i>
           </a>
-
           <a href="https://twitter.com/" target="_blank" class="footer__social-link">
             <i class='bx bxl-twitter'></i>
           </a>
-
           <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
             <i class='bx bxl-instagram'></i>
           </a>
         </ul>
       </div>
     </div>
-
     <span class="footer__copy">&#169; ACADEMLO. All rigths reserved</span>
   </footer>
   <!---=====shopping-cart -overlay====--->
-
   <div class="carrito_vacio">
     <div class="selected-products-list">
-
       <i class='bx bx-x bx-md cart__close' id="cart-close"></i>
-
-
       <div class="cart-list">
         <div class="empty-state">
           <img src="./assets/img/empty-cart2.png" alt="">
-
-
           <div class="cart_precios">
             <span class="cart__prices-item"><span id="items-count"></span> items</span>
             <span class="cart__prices-total" id="cart-total">$0.00</span>
           </div>
-
           <div class="cart_checkout">
             <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i>
               Checkout</button>
           </div>
-
         </div>
-
         <div class="cart" id="cart">
           <i class='bx bx-x cart__close' id="cart-close"></i>
-
           <h2 class="cart__title-center">My Cart</h2>
-
           <div class="cart-list"></div>
-
-
-
           <div class="cart__prices">
             <span class="cart__prices-item"><span id="items-count"></span> items</span>
             <span class="cart__prices-total" id="cart-total"></span>
           </div>
-
           <div class="cart__checkout">
             <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i>
               Checkout</button>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
-
-
-
-
   <script src="./assets/main.js"></script>
 </body>
-
 </html>
