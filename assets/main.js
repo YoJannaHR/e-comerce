@@ -1,9 +1,9 @@
 'use strict'
-// window.onload = function(){
-//     var contenedor = document.getElementById('contenedor_carga');
-//     contenedor.style.visibility = 'hidden';
-//     contenedor.style.opacity = '0';
-//   }
+    window.onload = function(){
+     var contenedor = document.getElementById('contenedor_carga');
+     contenedor.style.visibility = 'hidden';
+     contenedor.style.opacity = '0';
+   }
   //-------============= Menu hambuerguesa ===========-----*/
   
   let botonMenuHamburguesa = document.querySelector(".boton_menuMovil")
@@ -186,6 +186,8 @@ function mostrarProductosCart(){
         let totalProducto = item.quantitySelected * item.Precio
         suma += totalProducto
       cantidadTotal += item.quantitySelected
+
+      window.localStorage.setItem("tiendaData", JSON.stringify(cart))
     })
      fragmentoHTML += `
       <div class="cart-price">
@@ -195,6 +197,8 @@ function mostrarProductosCart(){
     `
    cartContainer.innerHTML = fragmentoHTML
     contador.textContent = cantidadTotal
+
+    window.localStorage.setItem((contadorData), JSON.stringify(cantidadTotal))
 }
 
 
