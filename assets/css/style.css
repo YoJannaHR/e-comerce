@@ -71,7 +71,7 @@ body {
 }
 .menu-close{
   position: absolute;
-  margin-left: 200px;
+  margin-left: 325px;
 }
 .menu-mobile{
  
@@ -196,6 +196,8 @@ margin-left: 88%;
   margin-top: 6rem;
   display: flex;
   justify-content: space-between;
+  font-weight:bold;
+  font-size: large;
 }
 .cart_checkout {
   display: flex;
@@ -210,6 +212,16 @@ margin-left: 88%;
   background-color:hsl(0, 0%, 90%);
   color:hsl(0, 0%, 15%);
 }
+.cart__btn2{
+ cursor: pointer;
+}
+
+.cart__btn2:hover{
+ background-color:hsl(354, 78%, 60%);
+ color: black;
+}
+
+
 .button {
   display: inline-block;
   padding: 1.25rem 2rem;
