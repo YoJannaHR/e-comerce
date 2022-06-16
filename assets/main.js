@@ -180,6 +180,7 @@ function mostrarProductosCart(){
             <img src=${item.imgUrl} alt="">
             <p>${item.nombre}</p>
             <small>Cantidad: ${item.quantitySelected}</small>
+      
         </div>
        `
 //-----variable que hace la suma de los productos--------*/
@@ -190,15 +191,28 @@ function mostrarProductosCart(){
       window.localStorage.setItem("tiendaData", JSON.stringify(cart))
     })
      fragmentoHTML += `
-      <div class="cart-price">
-         <p>Productos seleccionados:${ cantidadTotal }</p>
-         <p>$${ suma }</p>
+      
+        
+     <div class="cart_precios">
+     <span class="cart__prices-item"><span id="items-count"></span> items ${ cantidadTotal } </span>
+     <span class="cart__prices-total" id="cart-total">$${ suma }</span>
      </div>
+     <div class="cart_checkout">
+     <button class="button cart__btn2" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i>
+       Checkout</button>
+     </div>
+
+              
+
+
+
+
     `
    cartContainer.innerHTML = fragmentoHTML
     contador.textContent = cantidadTotal
 
     window.localStorage.setItem((contadorData), JSON.stringify(cantidadTotal))
 }
+
 
 
