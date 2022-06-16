@@ -7,29 +7,21 @@
   //-------============= Menu hambuerguesa ===========-----*/
   
   let botonMenuHamburguesa = document.querySelector(".boton_menuMovil")
-  let MenuHamburguesa = document.querySelector(".menu-mobile")
+  let menuHamburguesa = document.querySelector(".menu-mobile")
   let closeHamburguesa = document.querySelector(".cart-close2")
   let quitarMenuHamburguesa = document.querySelector(".menu-mobile")
   
   
   botonMenuHamburguesa.addEventListener("click", ()=>{
-       MenuHamburguesa.classList.add("mostrar2")
+       menuHamburguesa.classList.add("mostrar2")
   })
 
-  // closeHamburguesa.addEventListener("click",() =>{
+  closeHamburguesa.addEventListener("click",() =>{
 
-  //   quitarMenuHamburguesa.classList.replace("mostrar2" , ".menu-mobile")
-  // })
+    quitarMenuHamburguesa.classList.replace("mostrar2" , ".menu-mobile")
+  })
 
-
-//   menuHamburguesa.addEventListener("click", (e) =>
-//   fragmentoHTML += `
-//   <div class="menu-mobil">
-//     <nav
-//      <p>$${ suma }</p>
-//  </div>
-// `
-//   )
+  
 let contenedor = document.querySelector(".contenido_productos")
  /*!---=============VISTA DE CARRITO VACIO=============---*/
   let botonCompra = document.querySelector('#boton_compra')

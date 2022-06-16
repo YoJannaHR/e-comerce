@@ -91,7 +91,7 @@ body {
   
 }
 
-.menu-mobile .mostrar2{
+.menu-mobile.mostrar2{
 
   display: block;
 }
