@@ -74,6 +74,7 @@ body {
   margin-left: 200px;
 }
 .menu-mobile{
+ 
   background-color: #fff;
   width: 100vw;
   min-height: 100vh;
@@ -86,7 +87,15 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
+  display: none;
+  
 }
+
+.menu-mobile .mostrar2{
+
+  display: block;
+}
+
 .nav-mobile{
   text-decoration: none;
   list-style: none;
