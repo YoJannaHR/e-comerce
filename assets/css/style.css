@@ -214,11 +214,13 @@ margin-left: 88%;
 }
 .cart__btn2{
  cursor: pointer;
+ background-color: rgb(183, 182, 182);
+ color: black;
 }
 
 .cart__btn2:hover{
  background-color:hsl(354, 78%, 60%);
- color: black;
+ color:white;
 }
 
 
